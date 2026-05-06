@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio Pronto para Recomeçar — Dr. Bruno Goulart</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#B8953F;--gold-light:#D4AF6A;--dark:#0e0e0e;--off:#f7f4ef;--muted:#888;--text:#222}
+body{font-family:'Jost',sans-serif;color:var(--text);background:#fff}
+a{text-decoration:none;color:inherit}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;background:rgba(14,14,14,.92);backdrop-filter:blur(8px)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:#fff;letter-spacing:.1em}
+.nav-logo span{color:var(--gold)}
+.nav-back{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);transition:color .2s}
+.nav-back:hover{color:var(--gold)}
+.nav-back::before{content:'← '}
+
+.hero{min-height:100vh;background:var(--dark);display:flex;align-items:center;padding:100px 40px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:60%;height:100%;background:linear-gradient(135deg,transparent,rgba(184,149,63,.05))}
+.hero-inner{max-width:900px;margin:0 auto;width:100%}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:500}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,78px);font-weight:300;color:#fff;line-height:1.05;margin-bottom:28px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:17px;color:rgba(255,255,255,.6);line-height:1.85;max-width:580px;margin-bottom:14px;font-weight:300}
+.hero-promise{font-size:15px;color:rgba(255,255,255,.4);line-height:1.7;max-width:560px;margin-bottom:48px;font-weight:300;font-style:italic}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn-gold{background:var(--gold);color:#fff;padding:16px 40px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;border-radius:2px;transition:background .2s;display:inline-block}
+.btn-gold:hover{background:var(--gold-light)}
+.hero-price{font-size:13px;color:rgba(255,255,255,.35);letter-spacing:.06em}
+.hero-price strong{color:rgba(255,255,255,.6)}
+
+.forwho{padding:100px 40px;background:var(--off)}
+.section-inner{max-width:900px;margin:0 auto}
+.forwho h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--dark);margin-bottom:48px;line-height:1.15}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.card{background:#fff;border:1px solid #e8e3da;border-radius:2px;padding:28px 24px}
+.card-icon{font-size:22px;margin-bottom:14px}
+.card h3{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:8px}
+.card p{font-size:13px;color:#777;line-height:1.65;font-weight:300}
+
+.aulas{padding:100px 40px;background:var(--dark)}
+.aulas h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;color:#fff;margin-bottom:12px;line-height:1.15}
+.aulas-sub{font-size:15px;color:rgba(255,255,255,.4);margin-bottom:56px;font-weight:300}
+.aulas-list{display:flex;flex-direction:column}
+.aula{display:flex;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.aula:last-child{border-bottom:none}
+.aula-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:rgba(184,149,63,.3);flex-shrink:0;width:40px;line-height:1;margin-top:2px}
+.aula h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+.aula p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;font-weight:300}
+
+.cta-section{padding:100px 40px;background:#fff;text-align:center}
+.cta-inner{max-width:560px;margin:0 auto}
+.cta-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--dark);margin-bottom:12px;line-height:1.15}
+.cta-inner p{font-size:16px;color:#999;margin-bottom:48px;font-weight:300;line-height:1.7}
+.price-box{margin-bottom:36px}
+.price-de{font-size:14px;color:#ccc;text-decoration:line-through;margin-bottom:4px}
+.price-val{font-family:'Cormorant Garamond',serif;font-size:68px;font-weight:300;color:var(--dark);line-height:1}
+.price-val sup{font-size:24px;vertical-align:top;margin-top:16px;margin-right:2px}
+.price-obs{font-size:11px;color:#bbb;margin-top:10px;letter-spacing:.1em;text-transform:uppercase}
+.guarantee{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:24px;font-size:13px;color:#bbb}
+
+.faq{padding:80px 40px;background:var(--off)}
+.faq-inner{max-width:700px;margin:0 auto}
+.faq h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark);margin-bottom:40px}
+.faq-item{border-bottom:1px solid #e8e3da}
+.faq-q{padding:20px 0;font-size:15px;font-weight:500;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-icon{font-size:18px;color:var(--gold);transition:transform .25s;flex-shrink:0}
+.faq-a{display:none;padding:0 0 20px;font-size:14px;color:#777;line-height:1.75;font-weight:300}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+footer{background:var(--dark);padding:40px;text-align:center}
+footer p{font-size:12px;color:rgba(255,255,255,.3);line-height:2;letter-spacing:.06em}
+footer a{color:rgba(255,255,255,.4);transition:color .2s}
+footer a:hover{color:var(--gold)}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}
+  .hero,.forwho,.aulas,.cta-section,.faq{padding-left:20px;padding-right:20px}
+  .hero{padding-top:90px;padding-bottom:50px}
+  .forwho,.aulas,.cta-section{padding-top:60px;padding-bottom:60px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Dr. <span>Bruno Goulart</span></div>
+  <a href="/" class="nav-back">Voltar ao site</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Dr. Bruno Goulart · Desafio</p>
+    <h1>Pronto para<br><em>Recomeçar.</em></h1>
+    <p class="hero-desc">Para quem terminou um relacionamento mas ainda não conseguiu se desligar emocionalmente.</p>
+    <p class="hero-promise">Reorganize suas emoções, diminua a ansiedade da perda e se prepare para uma relação mais madura — sem voltar por medo da solidão.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-gold">Quero começar agora</a>
+      <p class="hero-price">Acesso imediato por <strong>R$27</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="forwho">
+  <div class="section-inner">
+    <p class="eyebrow">Para quem é</p>
+    <h2>Você se reconhece<br>em algum desses cenários?</h2>
+    <div class="cards">
+      <div class="card"><div class="card-icon">💔</div><h3>O término aconteceu, mas a dor não foi</h3><p>Você sabe que acabou. Mas o coração não acompanhou a decisão da cabeça.</p></div>
+      <div class="card"><div class="card-icon">🔄</div><h3>Ciclos de vai e vem</h3><p>Volta não por amor de verdade, mas por medo de encarar o vazio que ficou.</p></div>
+      <div class="card"><div class="card-icon">😶</div><h3>Padrões que se repetem</h3><p>Sente que repete os mesmos erros mas não sabe por onde começar a mudar.</p></div>
+      <div class="card"><div class="card-icon">🌱</div><h3>Quer recomeçar com consciência</h3><p>Não quer repetir o passado. Quer escolher melhor da próxima vez.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="aulas">
+  <div class="section-inner">
+    <p class="eyebrow">O programa</p>
+    <h2>7 aulas. Uma virada<br>de chave por vez.</h2>
+    <p class="aulas-sub">Curtas, diretas e práticas. Você assiste no seu ritmo.</p>
+    <div class="aulas-list">
+      <div class="aula"><div class="aula-num">01</div><div><h3>O término que não terminou</h3><p>Por que você ainda está preso mesmo depois que acabou. A diferença entre o fim do relacionamento e o fim do vínculo emocional.</p></div></div>
+      <div class="aula"><div class="aula-num">02</div><div><h3>Soltar sem odiar</h3><p>Como liberar a pessoa sem precisar transformá-la em vilão ou em saudade. O exercício da carta de despedida.</p></div></div>
+      <div class="aula"><div class="aula-num">03</div><div><h3>Quem você é sem essa relação</h3><p>Reconstrução de identidade e autoestima real — nem inflada, nem vazia.</p></div></div>
+      <div class="aula"><div class="aula-num">04</div><div><h3>As crenças que te prendem</h3><p>"Quem ama sofre." "Meu passado me condena." Desconstrução das frases que sabotam sua vida afetiva.</p></div></div>
+      <div class="aula"><div class="aula-num">05</div><div><h3>Por que você atraiu essa pessoa</h3><p>Mapeamento de padrões de atração. O que suas escolhas dizem sobre o que você acreditava sobre si mesmo.</p></div></div>
+      <div class="aula"><div class="aula-num">06</div><div><h3>O que você realmente quer</h3><p>Sair do piloto automático afetivo. Exercício prático de valores: o que você prioriza e o quanto você já vive isso.</p></div></div>
+      <div class="aula"><div class="aula-num">07</div><div><h3>Pronto para recomeçar</h3><p>Não é sobre encontrar alguém. É sobre chegar num lugar de paz que não depende de ninguém para existir.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <p class="eyebrow">Investimento</p>
+    <h2>Comece hoje.<br>Sem enrolação.</h2>
+    <p>7 aulas. Acesso imediato. Resultado que anos de terapia podem demorar a dar.</p>
+    <div class="price-box">
+      <p class="price-de">De R$ 97,00</p>
+      <p class="price-val"><sup>R$</sup>27</p>
+      <p class="price-obs">Pagamento único · Acesso imediato</p>
+    </div>
+    <a href="#" class="btn-gold">Quero começar agora</a>
+    <div class="guarantee"><span>🛡️</span><span>Garantia de 7 dias. Não gostou, devolvemos 100%.</span></div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-inner">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Para quem é esse desafio?<span class="faq-icon">+</span></div><div class="faq-a">Para homens e mulheres que terminaram um relacionamento mas ainda não conseguiram se desligar emocionalmente. Se você sente ansiedade da perda, fica em ciclos de vai e vem ou não sabe como seguir em frente, esse desafio é para você.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Como funciona o acesso?<span class="faq-icon">+</span></div><div class="faq-a">Assim que o pagamento for confirmado, você recebe os dados de acesso no e-mail. As 7 aulas ficam disponíveis para assistir no seu próprio ritmo.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quanto tempo levam as aulas?<span class="faq-icon">+</span></div><div class="faq-a">As aulas são curtas e diretas. Você consegue assistir todas em uma única tarde — ou distribuir ao longo da semana.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Como posso pagar?<span class="faq-icon">+</span></div><div class="faq-a">Via Pix ou cartão de crédito, processado pela Hotmart.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">E se eu não gostar?<span class="faq-icon">+</span></div><div class="faq-a">Sem burocracia. Se dentro de 7 dias você sentir que não valeu, devolvemos 100% do seu investimento.</div></div>
+  </div>
+</section>
+
+<footer>
+  <p>Dr. Bruno Goulart · CRM-SP 192.571 · Psiquiatria e Saúde Mental</p>
+  <p style="margin-top:8px"><a href="/">Site principal</a> · <a href="https://instagram.com/drbrunogoulart" target="_blank">Instagram</a> · <a href="https://youtube.com/@drbrunogoulart" target="_blank">YouTube</a></p>
+  <p style="margin-top:16px">© 2025 Dr. Bruno Goulart · Todos os direitos reservados</p>
+</footer>
+
+<script>
+function toggleFaq(el){
+  const item=el.parentElement;
+  const open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!open) item.classList.add('open');
+}
+</script>
+</body>
+</html>
