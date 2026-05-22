@@ -153,14 +153,41 @@ footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.8}
 @media(max-width:900px){
   nav .nav-links{display:none}
   .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-right{height:50vw}
-  .hero-left{padding:120px 6% 60px}
-  .sobre,.livro{grid-template-columns:1fr;gap:48px}
-  .sobre-img{aspect-ratio:16/9}
-  .livro-capa{width:180px;margin:0 auto}
-  .metodo-grid,.consultas-grid{grid-template-columns:1fr}
-  .hero-stats{gap:24px}
-  footer{flex-direction:column;text-align:center}
+  .hero-right{height:55vw;order:-1}
+  .hero-left{padding:80px 6% 50px}
+  .hero h1{font-size:clamp(36px,10vw,56px)}
+  .hero-desc{font-size:15px;margin-bottom:32px}
+  .hero-btns{flex-direction:column;align-items:flex-start;gap:12px}
+  .btn-primary,.btn-ghost{width:100%;text-align:center}
+  .hero-stats{flex-direction:column;gap:16px;margin-top:36px;padding-top:28px}
+  .stat-val{font-size:13px}
+  .sobre,.livro{grid-template-columns:1fr;gap:40px}
+  .sobre-img{aspect-ratio:4/3}
+  .sobre{padding:60px 6%}
+  .sobre h2{font-size:28px}
+  .metodo{padding:60px 6%}
+  .metodo-grid{grid-template-columns:1fr;gap:14px}
+  .consultas{padding:60px 6%}
+  .consultas-grid{grid-template-columns:1fr;gap:14px}
+  .desafio{padding:60px 6%}
+  .desafio h2{font-size:clamp(32px,8vw,52px)}
+  .desafio p{font-size:15px}
+  .preco-val{font-size:60px}
+  .conteudo{padding:60px 6%}
+  .conteudo-btns{flex-direction:column;align-items:center}
+  .livro{padding:60px 6%;grid-template-columns:1fr}
+  .livro-capa{width:160px;margin:0 auto}
+  footer{flex-direction:column;text-align:center;padding:32px 6%;gap:16px}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+@media(max-width:480px){
+  .hero-left{padding:80px 5% 40px}
+  .hero h1{font-size:clamp(32px,9vw,44px)}
+  .sobre,.metodo,.consultas,.desafio,.conteudo,.livro{padding-left:5%;padding-right:5%}
+  .metodo-card{padding:24px 20px}
+  .consulta-card{padding:24px 20px}
+  .hero-right{height:60vw}
+  .nav-logo{font-size:15px}
 }
 </style>
 </head>
@@ -293,7 +320,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.8}
   <div class="desafio-inner">
     <div class="desafio-tag">Desafio · Programa Digital</div>
     <h2>Pronto para<br><em>Recomeçar.</em></h2>
-    <p>Para quem terminou um relacionamento mas ainda não conseguiu se desligar emocionalmente. 7 aulas curtas para reorganizar suas emoções e se preparar para uma relação mais madura.</p>
+    <p>Para quem terminou, mas ainda não se desligou emocionalmente. 3 aulas diretas para reorganizar o que ficou.</p>
     <div class="desafio-preco">
       <p class="preco-de">De R$ 97,00</p>
       <p class="preco-val"><sup>R$</sup>27</p>
