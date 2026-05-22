@@ -3,378 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Bruno Goulart — Psiquiatria, Saúde Mental e Relacionamentos</title>
+<title>Desafio Pronto para Recomeçar — Dr. Bruno Goulart</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --bege:#F2EDE4;
-  --bege2:#E8E0D4;
-  --roxo:#4B0082;
-  --roxo-light:#6B2FA0;
-  --azul:#0047AB;
-  --verm:#8B0000;
-  --preto:#0A0A0A;
-  --cinza:#2A2A2A;
-  --text:#1A1A1A;
-  --muted:#6B6560;
-}
+:root{--bege:#F2EDE4;--bege2:#E8E0D4;--roxo:#4B0082;--roxo-light:#6B2FA0;--roxo-pale:#C4A8E8;--preto:#0A0A0A;--muted:#6B6560;--text:#1A1A1A}
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;background:var(--bege);color:var(--text);overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(242,237,228,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.06)}
-.nav-logo{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;letter-spacing:.02em;color:var(--preto)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--preto)}
 .nav-logo span{color:var(--roxo)}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:13px;font-weight:400;color:var(--muted);transition:color .2s;letter-spacing:.04em}
-.nav-links a:hover{color:var(--preto)}
-.nav-cta{background:var(--roxo)!important;color:#fff!important;padding:10px 22px;border-radius:50px;font-size:13px!important;font-weight:500!important;transition:background .2s!important}
-.nav-cta:hover{background:var(--roxo-light)!important}
-
-/* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:var(--preto);position:relative;overflow:hidden}
-.hero-left{padding:140px 5% 80px 8%;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(75,0,130,.25);border:1px solid rgba(75,0,130,.4);color:#C4A8E8;font-size:11px;font-weight:500;padding:6px 16px;border-radius:50px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:32px;width:fit-content}
-.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#C4A8E8}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(44px,5.5vw,76px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:24px;letter-spacing:-.02em}
-.hero h1 em{font-style:italic;color:#C4A8E8}
-.hero-desc{font-size:17px;color:rgba(255,255,255,.55);line-height:1.8;max-width:480px;margin-bottom:48px;font-weight:300}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{background:var(--roxo);color:#fff;padding:16px 36px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:.04em;transition:all .2s;display:inline-block}
+.nav-back{font-size:13px;color:var(--muted);transition:color .2s}
+.nav-back:hover{color:var(--roxo)}
+.hero{min-height:100vh;background:var(--preto);display:flex;align-items:center;padding:120px 8% 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:linear-gradient(135deg,transparent,rgba(75,0,130,.08))}
+.hero::after{content:'27';position:absolute;right:5%;bottom:10%;font-family:'Playfair Display',serif;font-size:320px;font-weight:900;color:rgba(75,0,130,.06);line-height:1;pointer-events:none}
+.hero-inner{max-width:720px;position:relative;z-index:2}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(75,0,130,.25);border:1px solid rgba(75,0,130,.4);color:var(--roxo-pale);font-size:11px;font-weight:500;padding:6px 16px;border-radius:50px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:32px}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--roxo-pale)}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,88px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:24px;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--roxo-pale)}
+.hero-desc{font-size:18px;color:rgba(255,255,255,.55);line-height:1.8;max-width:520px;margin-bottom:48px;font-weight:300}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--roxo);color:#fff;padding:18px 40px;border-radius:50px;font-size:14px;font-weight:500;letter-spacing:.04em;transition:all .2s;display:inline-block}
 .btn-primary:hover{background:var(--roxo-light);transform:translateY(-1px)}
-.btn-ghost{background:transparent;color:rgba(255,255,255,.7);padding:16px 36px;border-radius:50px;font-size:14px;font-weight:400;border:1px solid rgba(255,255,255,.2);transition:all .2s;display:inline-block;letter-spacing:.04em}
-.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
-.hero-stats{display:flex;gap:40px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.1)}
-.stat-val{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;line-height:1}
-.stat-label{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px;letter-spacing:.06em;text-transform:uppercase}
-.hero-right{position:relative;overflow:hidden}
-.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(100%) contrast(1.05)}
-.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--preto) 0%,transparent 30%,transparent 70%,var(--preto) 100%)}
-.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--preto) 100%);z-index:1}
-
-/* SOBRE */
-.sobre{padding:100px 8%;background:var(--bege);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.sobre-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5}
-.sobre-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(20%) contrast(1.05)}
-.sobre-img::after{content:'DR';position:absolute;bottom:24px;left:24px;font-family:'Playfair Display',serif;font-size:120px;font-weight:900;color:rgba(75,0,130,.12);line-height:1;pointer-events:none}
-.sobre-tag{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin-bottom:16px}
-.sobre h2{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,48px);font-weight:700;color:var(--preto);line-height:1.15;margin-bottom:24px}
-.sobre p{font-size:16px;color:var(--muted);line-height:1.85;margin-bottom:20px;font-weight:300}
-.sobre-credenciais{display:flex;flex-direction:column;gap:10px;margin-top:32px}
-.cred{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--cinza)}
-.cred-dot{width:8px;height:8px;border-radius:50%;background:var(--roxo);flex-shrink:0;margin-top:5px}
-
-/* METODO */
-.metodo{padding:100px 8%;background:var(--preto)}
-.section-header{text-align:center;margin-bottom:64px}
-.section-tag{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C4A8E8;margin-bottom:16px}
-.section-tag.dark{color:var(--roxo)}
-.section-h2{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,52px);font-weight:700;color:#fff;line-height:1.15}
-.section-h2.dark{color:var(--preto)}
-.metodo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.metodo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px 28px;transition:all .25s}
-.metodo-card:hover{background:rgba(75,0,130,.12);border-color:rgba(75,0,130,.3);transform:translateY(-4px)}
-.metodo-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:rgba(75,0,130,.3);line-height:1;margin-bottom:20px}
-.metodo-card h3{font-size:17px;font-weight:500;color:#fff;margin-bottom:10px}
-.metodo-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;font-weight:300}
-
-/* CONSULTAS */
-.consultas{padding:100px 8%;background:var(--bege2)}
-.consultas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
-.consulta-card{background:#fff;border-radius:24px;padding:36px;transition:all .25s;border:2px solid transparent;position:relative;overflow:hidden}
-.consulta-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--roxo)}
-.consulta-card.destaque{border-color:var(--roxo);background:var(--preto)}
-.consulta-card.destaque::before{background:#C4A8E8}
-.consulta-card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.1)}
-.consulta-label{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin-bottom:16px}
-.consulta-card.destaque .consulta-label{color:#C4A8E8}
-.consulta-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--preto);margin-bottom:8px}
-.consulta-card.destaque h3{color:#fff}
-.consulta-freq{font-size:13px;color:var(--muted);margin-bottom:24px}
-.consulta-card.destaque .consulta-freq{color:rgba(255,255,255,.5)}
-.consulta-features{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
-.consulta-features li{font-size:14px;color:var(--cinza);display:flex;gap:10px;align-items:flex-start;line-height:1.5}
-.consulta-card.destaque .consulta-features li{color:rgba(255,255,255,.65)}
-.consulta-features li::before{content:'✓';color:var(--roxo);font-weight:700;flex-shrink:0}
-.consulta-card.destaque .consulta-features li::before{color:#C4A8E8}
-.btn-card{display:block;text-align:center;background:var(--bege);color:var(--preto);padding:14px;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:50px;transition:all .2s;border:1px solid rgba(0,0,0,.1)}
-.btn-card:hover{background:var(--roxo);color:#fff;border-color:var(--roxo)}
-.btn-card.inv{background:var(--roxo);color:#fff;border:none}
-.btn-card.inv:hover{background:var(--roxo-light)}
-
-/* DESAFIO */
-.desafio{padding:100px 8%;background:linear-gradient(135deg,var(--roxo) 0%,#2A0050 100%);position:relative;overflow:hidden}
-.desafio::before{content:'NÓS';position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:260px;font-weight:900;color:rgba(255,255,255,.04);pointer-events:none;line-height:1}
-.desafio-inner{max-width:860px;margin:0 auto;text-align:center;position:relative;z-index:2}
-.desafio-tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:11px;font-weight:500;padding:6px 18px;border-radius:50px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
-.desafio h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;margin-bottom:20px;line-height:1.1}
-.desafio h2 em{font-style:italic;color:#C4A8E8}
-.desafio p{font-size:17px;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto 48px;line-height:1.8;font-weight:300}
-.desafio-preco{margin-bottom:40px}
-.preco-de{font-size:14px;color:rgba(255,255,255,.35);text-decoration:line-through;margin-bottom:4px}
-.preco-val{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:#fff;line-height:1}
-.preco-val sup{font-size:28px;vertical-align:top;margin-top:16px;margin-right:4px}
-.preco-obs{font-size:12px;color:rgba(255,255,255,.35);margin-top:8px;letter-spacing:.08em;text-transform:uppercase}
-.btn-desafio{display:inline-block;background:#fff;color:var(--roxo);padding:18px 48px;border-radius:50px;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
-.btn-desafio:hover{background:#f0e8ff;transform:translateY(-2px)}
-.garantia{margin-top:20px;font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px;justify-content:center}
-
-/* CONTEUDO */
-.conteudo{padding:100px 8%;background:var(--bege);text-align:center}
-.conteudo-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:48px}
-.btn-yt{display:inline-flex;align-items:center;gap:10px;background:#FF0000;color:#fff;padding:16px 32px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:.06em;transition:opacity .2s}
-.btn-yt:hover{opacity:.85}
-.btn-sp{display:inline-flex;align-items:center;gap:10px;background:#1DB954;color:#fff;padding:16px 32px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:.06em;transition:opacity .2s}
-.btn-sp:hover{opacity:.85}
-
-/* LIVRO */
-.livro{padding:100px 8%;background:var(--preto);display:grid;grid-template-columns:auto 1fr;gap:80px;align-items:center}
-.livro-capa{width:260px;flex-shrink:0;border-radius:12px;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5);transform:rotate(-2deg)}
-.livro-capa img{width:100%;height:100%;object-fit:cover}
-.livro-tag{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#C4A8E8;margin-bottom:16px}
-.livro h2{font-family:'Playfair Display',serif;font-size:clamp(32px,3.5vw,52px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px}
-.livro h2 em{font-style:italic;color:#C4A8E8}
-.livro p{font-size:16px;color:rgba(255,255,255,.5);line-height:1.8;margin-bottom:32px;font-weight:300}
-.btn-livro{display:inline-block;background:var(--roxo);color:#fff;padding:16px 36px;border-radius:50px;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
-.btn-livro:hover{background:var(--roxo-light)}
-
-/* FOOTER */
-footer{background:#050505;padding:48px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
-.footer-logo{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff}
-.footer-logo span{color:#C4A8E8}
-footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.8}
+.hero-price{font-size:14px;color:rgba(255,255,255,.35)}
+.hero-price strong{color:rgba(255,255,255,.65)}
+.forwho{padding:100px 8%;background:var(--bege2)}
+.section-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo);margin-bottom:16px}
+.section-h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--preto);line-height:1.15;margin-bottom:48px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.fw-card{background:#fff;border-radius:20px;padding:28px 24px;border:1px solid rgba(0,0,0,.06)}
+.fw-icon{font-size:24px;margin-bottom:14px}
+.fw-card h3{font-size:15px;font-weight:600;color:var(--preto);margin-bottom:8px}
+.fw-card p{font-size:14px;color:var(--muted);line-height:1.65;font-weight:300}
+.aulas{padding:100px 8%;background:var(--preto)}
+.aulas-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--roxo-pale);margin-bottom:16px}
+.aulas-h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:12px}
+.aulas-sub{font-size:16px;color:rgba(255,255,255,.4);margin-bottom:56px;font-weight:300}
+.aula{display:flex;gap:32px;align-items:flex-start;padding:36px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.aula:last-child{border-bottom:none}
+.aula-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:rgba(75,0,130,.35);flex-shrink:0;width:56px;line-height:1;margin-top:2px}
+.aula h3{font-size:20px;font-weight:600;color:#fff;margin-bottom:10px}
+.aula p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300}
+.cta-section{padding:100px 8%;background:var(--bege);text-align:center}
+.cta-inner{max-width:520px;margin:0 auto}
+.cta-inner h2{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:var(--preto);margin-bottom:12px;line-height:1.15}
+.cta-inner p{font-size:16px;color:var(--muted);margin-bottom:48px;font-weight:300;line-height:1.7}
+.price-box{margin-bottom:40px}
+.price-de{font-size:14px;color:#bbb;text-decoration:line-through;margin-bottom:4px}
+.price-val{font-family:'Playfair Display',serif;font-size:80px;font-weight:900;color:var(--preto);line-height:1}
+.price-val sup{font-size:28px;vertical-align:top;margin-top:20px;margin-right:4px}
+.price-obs{font-size:12px;color:#aaa;margin-top:10px;letter-spacing:.1em;text-transform:uppercase}
+.guarantee{display:flex;align-items:center;gap:8px;justify-content:center;margin-top:24px;font-size:13px;color:#aaa}
+.faq{padding:80px 8%;background:var(--bege2)}
+.faq-inner{max-width:700px;margin:0 auto}
+.faq-inner h2{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--preto);margin-bottom:40px}
+.faq-item{border-bottom:1px solid rgba(0,0,0,.1)}
+.faq-q{padding:20px 0;font-size:15px;font-weight:500;color:var(--preto);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-icon{font-size:20px;color:var(--roxo);transition:transform .25s;flex-shrink:0}
+.faq-a{display:none;padding:0 0 20px;font-size:14px;color:var(--muted);line-height:1.75;font-weight:300}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+footer{background:var(--preto);padding:40px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff}
+.footer-logo span{color:var(--roxo-pale)}
+footer p{font-size:12px;color:rgba(255,255,255,.25)}
 .footer-links{display:flex;gap:20px}
-.footer-links a{font-size:12px;color:rgba(255,255,255,.35);transition:color .2s;letter-spacing:.04em}
-.footer-links a:hover{color:#C4A8E8}
-
-@media(max-width:900px){
-  nav .nav-links{display:none}
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-right{height:55vw;order:-1}
-  .hero-left{padding:80px 6% 50px}
-  .hero h1{font-size:clamp(36px,10vw,56px)}
-  .hero-desc{font-size:15px;margin-bottom:32px}
-  .hero-btns{flex-direction:column;align-items:flex-start;gap:12px}
-  .btn-primary,.btn-ghost{width:100%;text-align:center}
-  .hero-stats{flex-direction:column;gap:16px;margin-top:36px;padding-top:28px}
-  .stat-val{font-size:13px}
-  .sobre,.livro{grid-template-columns:1fr;gap:40px}
-  .sobre-img{aspect-ratio:4/3}
-  .sobre{padding:60px 6%}
-  .sobre h2{font-size:28px}
-  .metodo{padding:60px 6%}
-  .metodo-grid{grid-template-columns:1fr;gap:14px}
-  .consultas{padding:60px 6%}
-  .consultas-grid{grid-template-columns:1fr;gap:14px}
-  .desafio{padding:60px 6%}
-  .desafio h2{font-size:clamp(32px,8vw,52px)}
-  .desafio p{font-size:15px}
-  .preco-val{font-size:60px}
-  .conteudo{padding:60px 6%}
-  .conteudo-btns{flex-direction:column;align-items:center}
-  .livro{padding:60px 6%;grid-template-columns:1fr}
-  .livro-capa{width:160px;margin:0 auto}
-  footer{flex-direction:column;text-align:center;padding:32px 6%;gap:16px}
-  .footer-links{flex-wrap:wrap;justify-content:center}
-}
-@media(max-width:480px){
-  .hero-left{padding:80px 5% 40px}
-  .hero h1{font-size:clamp(32px,9vw,44px)}
-  .sobre,.metodo,.consultas,.desafio,.conteudo,.livro{padding-left:5%;padding-right:5%}
-  .metodo-card{padding:24px 20px}
-  .consulta-card{padding:24px 20px}
-  .hero-right{height:60vw}
-  .nav-logo{font-size:15px}
-}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.35);transition:color .2s}
+.footer-links a:hover{color:var(--roxo-pale)}
+@media(max-width:768px){nav{padding:16px 5%}.hero,.forwho,.aulas,.cta-section,.faq{padding-left:6%;padding-right:6%}.hero{padding-top:100px;padding-bottom:60px}.aula{gap:20px}footer{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-logo">Dr. <span>Bruno Goulart</span></div>
-  <div class="nav-links">
-    <a href="#sobre">Sobre</a>
-    <a href="#metodo">Método</a>
-    <a href="#consultas">Consultas</a>
-    <a href="#desafio">Desafio</a>
-    <a href="https://wa.me/55" class="nav-cta">Agendar</a>
-  </div>
+  <a href="/" class="nav-back">← Voltar ao site</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag">Psiquiatria · Terapia · Relacionamentos</div>
-    <h1>Saúde mental<br>com <em>profundidade</em><br>e direção.</h1>
-    <p class="hero-desc">Uma abordagem que une o rigor da psiquiatria ao acolhimento terapêutico — em uma única consulta. Para quem quer se tratar de verdade.</p>
+  <div class="hero-inner">
+    <div class="hero-tag">Dr. Bruno Goulart · Programa Digital</div>
+    <h1>Pronto para<br><em>Recomeçar.</em></h1>
+    <p class="hero-desc">Para quem terminou, mas ainda não se desligou emocionalmente. 3 aulas diretas para reorganizar o que ficou.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/55" class="btn-primary">Agendar consulta</a>
-      <a href="#sobre" class="btn-ghost">Conhecer o método</a>
+      <a href="#cta" class="btn-primary">Quero começar agora</a>
+      <p class="hero-price">Acesso imediato por <strong>R$27</strong></p>
     </div>
-    <div class="hero-stats">
-      <div><div class="stat-val" style="font-size:14px;font-weight:400;letter-spacing:.06em">CRM-SP 192.571</div><div class="stat-label">Médico Psiquiatra</div></div>
-      <div><div class="stat-val" style="font-size:14px;font-weight:400;letter-spacing:.06em">Psiquiatria + Terapia</div><div class="stat-label">Em uma única consulta</div></div>
-      <div><div class="stat-val" style="font-size:14px;font-weight:400;letter-spacing:.06em">Alphaville, SP</div><div class="stat-label">Atendimento presencial</div></div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img src="bruno1.jpeg" alt="Dr. Bruno Goulart">
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="sobre" id="sobre">
-  <div class="sobre-img">
-    <img src="bruno2.jpeg" alt="Dr. Bruno Goulart">
+<section class="forwho">
+  <p class="section-eyebrow">Para quem é</p>
+  <h2 class="section-h2">Você se reconhece<br>em algum desses cenários?</h2>
+  <div class="cards-grid">
+    <div class="fw-card"><div class="fw-icon">💔</div><h3>O término aconteceu, mas a dor não foi</h3><p>Você sabe que acabou. Mas o coração não acompanhou a decisão da cabeça.</p></div>
+    <div class="fw-card"><div class="fw-icon">🔄</div><h3>Ciclos de vai e vem</h3><p>Volta não por amor de verdade, mas por medo de encarar o vazio que ficou.</p></div>
+    <div class="fw-card"><div class="fw-icon">😶</div><h3>Padrões que se repetem</h3><p>Sente que repete os mesmos erros mas não sabe por onde começar a mudar.</p></div>
+    <div class="fw-card"><div class="fw-icon">🌱</div><h3>Quer recomeçar com consciência</h3><p>Não quer repetir o passado. Quer escolher melhor da próxima vez.</p></div>
   </div>
+</section>
+
+<section class="aulas">
+  <p class="aulas-eyebrow">O programa</p>
+  <h2 class="aulas-h2">3 aulas. Uma virada<br>de chave por vez.</h2>
+  <p class="aulas-sub">Curtas, diretas e práticas. Você assiste no seu ritmo.</p>
   <div>
-    <p class="sobre-tag">Sobre o médico</p>
-    <h2>Psiquiatria e terapia na mesma consulta.</h2>
-    <p>O Dr. Bruno Goulart é médico dedicado à saúde mental com uma abordagem que rompe a barreira entre a medicina convencional e a compreensão profunda da alma humana.</p>
-    <p>Sua prática integra, em uma única consulta, o manejo farmacológico preciso da psiquiatria ao acolhimento reflexivo da terapia — otimizando tempo, custo e resultado.</p>
-    <div class="sobre-credenciais">
-      <div class="cred"><div class="cred-dot"></div><div>Medicina — Universidade Federal do Triângulo Mineiro (UFTM)</div></div>
-      <div class="cred"><div class="cred-dot"></div><div>Especialização em Psiquiatria — Faculdade Mar Atlântico</div></div>
-      <div class="cred"><div class="cred-dot"></div><div>Pós-graduação em Psicologia Positiva — PUC</div></div>
-      <div class="cred"><div class="cred-dot"></div><div>Filosofia Clássica e Antropologia — Faculdade Mar Atlântico</div></div>
+    <div class="aula">
+      <div class="aula-num">01</div>
+      <div><h3>Libertar o passado</h3><p>Por que você ainda está preso mesmo depois que acabou. Como soltar sem odiar — e colocar cada pessoa no lugar que ela pertence: no passado.</p></div>
+    </div>
+    <div class="aula">
+      <div class="aula-num">02</div>
+      <div><h3>Reconstruir a identidade</h3><p>Quem você é sem essa relação. Como fortalecer a autoestima real — nem inflada, nem vazia — e se tornar inteiro antes de qualquer recomeço.</p></div>
+    </div>
+    <div class="aula">
+      <div class="aula-num">03</div>
+      <div><h3>Pronto para recomeçar</h3><p>Entender por que você atraiu essa pessoa, o que você realmente busca e como se preparar para uma relação mais madura — sem voltar por medo da solidão.</p></div>
     </div>
   </div>
 </section>
 
-<!-- MÉTODO -->
-<section class="metodo" id="metodo">
-  <div class="section-header">
-    <p class="section-tag">O método</p>
-    <h2 class="section-h2">Por que separar sua mente<br>em dois consultórios?</h2>
-  </div>
-  <div class="metodo-grid">
-    <div class="metodo-card">
-      <div class="metodo-num">01</div>
-      <h3>Visão Integrada</h3>
-      <p>O médico que ajusta sua medicação é o mesmo que conhece suas questões emocionais mais profundas.</p>
+<section class="cta-section" id="cta">
+  <div class="cta-inner">
+    <p class="section-eyebrow" style="text-align:center">Investimento</p>
+    <h2>Comece hoje.<br>Sem enrolação.</h2>
+    <p>3 aulas. Acesso imediato. Um ponto de partida real para quem quer sair do lugar.</p>
+    <div class="price-box">
+      <p class="price-de">De R$ 97,00</p>
+      <p class="price-val"><sup>R$</sup>27</p>
+      <p class="price-obs">Pagamento único · Acesso imediato</p>
     </div>
-    <div class="metodo-card">
-      <div class="metodo-num">02</div>
-      <h3>Otimização de Tempo</h3>
-      <p>Um único agendamento, um único deslocamento em Alphaville. Sem fragmentar seu cuidado.</p>
-    </div>
-    <div class="metodo-card">
-      <div class="metodo-num">03</div>
-      <h3>Imersão Real</h3>
-      <p>Consultas de até 3 horas na primeira consulta e até 2 horas nas demais. Profundidade que transforma.</p>
-    </div>
+    <a href="#" class="btn-primary">Quero começar agora</a>
+    <div class="guarantee">🛡️ Garantia de 7 dias — 100% do dinheiro de volta</div>
   </div>
 </section>
 
-<!-- CONSULTAS -->
-<section class="consultas" id="consultas">
-  <div class="section-header">
-    <p class="section-tag dark">Consultas</p>
-    <h2 class="section-h2 dark">Planos de atendimento</h2>
-  </div>
-  <div class="consultas-grid">
-    <div class="consulta-card">
-      <p class="consulta-label">Primeira Consulta</p>
-      <h3>Consulta Avulsa</h3>
-      <p class="consulta-freq">Avaliação completa · Imersão de até 3 horas</p>
-      <ul class="consulta-features">
-        <li>Avaliação profunda do seu estado atual</li>
-        <li>Psiquiatria + Terapia integrada em uma única consulta</li>
-        <li>Definição do protocolo ideal para o seu caso</li>
-        <li>Nota fiscal emitida</li>
-      </ul>
-      <a href="https://wa.me/55" class="btn-card">Entrar em contato</a>
-    </div>
-    <div class="consulta-card destaque">
-      <p class="consulta-label">Quinzenal</p>
-      <h3>Consultas a cada 15 dias</h3>
-      <p class="consulta-freq">Foco em psicoterapia · 2 consultas/mês</p>
-      <ul class="consulta-features">
-        <li>Para quem está iniciando medicação ou em crise</li>
-        <li>Burnout, Pânico, Depressão Grave</li>
-        <li>Ajuste rápido de dose + suporte terapêutico intensivo</li>
-        <li>Imersão de até 2 horas por sessão</li>
-      </ul>
-      <a href="https://wa.me/55" class="btn-card inv">Entrar em contato</a>
-    </div>
-    <div class="consulta-card">
-      <p class="consulta-label">Manutenção</p>
-      <h3>Consultas de Manutenção</h3>
-      <p class="consulta-freq">Para quem toma medicação e está estável</p>
-      <ul class="consulta-features">
-        <li>Revisão e ajuste fino da medicação</li>
-        <li>Acompanhamento terapêutico contínuo</li>
-        <li>Psicologia Positiva e florescimento</li>
-        <li>Imersão de até 2 horas por sessão</li>
-      </ul>
-      <a href="https://wa.me/55" class="btn-card">Entrar em contato</a>
-    </div>
+<section class="faq">
+  <div class="faq-inner">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Para quem é esse programa?<span class="faq-icon">+</span></div><div class="faq-a">Para homens e mulheres que terminaram um relacionamento mas ainda não conseguiram se desligar emocionalmente. Se você sente ansiedade, fica em ciclos de vai e vem ou não sabe como seguir em frente, esse programa é para você.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Como funciona o acesso?<span class="faq-icon">+</span></div><div class="faq-a">Assim que o pagamento for confirmado, você recebe os dados de acesso no e-mail. As aulas ficam disponíveis para assistir no seu próprio ritmo.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Quanto tempo levam as aulas?<span class="faq-icon">+</span></div><div class="faq-a">As aulas são curtas e diretas. Você consegue assistir todas em uma única tarde.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Como posso pagar?<span class="faq-icon">+</span></div><div class="faq-a">Via Pix ou cartão de crédito, processado pela Hotmart.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">E se eu não gostar?<span class="faq-icon">+</span></div><div class="faq-a">Sem burocracia. Se dentro de 7 dias você sentir que não valeu, devolvemos 100% do seu investimento.</div></div>
   </div>
 </section>
 
-<!-- DESAFIO -->
-<section class="desafio" id="desafio">
-  <div class="desafio-inner">
-    <div class="desafio-tag">Desafio · Programa Digital</div>
-    <h2>Pronto para<br><em>Recomeçar.</em></h2>
-    <p>Para quem terminou, mas ainda não se desligou emocionalmente. 3 aulas diretas para reorganizar o que ficou.</p>
-    <div class="desafio-preco">
-      <p class="preco-de">De R$ 97,00</p>
-      <p class="preco-val"><sup>R$</sup>27</p>
-      <p class="preco-obs">Pagamento único · Acesso imediato</p>
-    </div>
-    <a href="/desafio" class="btn-desafio">Quero começar agora</a>
-    <div class="garantia">🛡️ Garantia de 7 dias — 100% do dinheiro de volta</div>
-  </div>
-</section>
-
-<!-- CONTEÚDO -->
-<section class="conteudo" id="conteudo">
-  <p class="sobre-tag" style="text-align:center">Conteúdo gratuito</p>
-  <h2 style="font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,44px);font-weight:700;color:var(--preto);margin-bottom:16px">Acompanhe no YouTube e Spotify</h2>
-  <p style="font-size:16px;color:var(--muted);max-width:520px;margin:0 auto;font-weight:300;line-height:1.7">Psiquiatria, relacionamentos e maturidade emocional — direto, sem enrolação.</p>
-  <div class="conteudo-btns">
-    <a href="https://youtube.com/@drbrunogoulart" target="_blank" class="btn-yt">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      @drbrunogoulart
-    </a>
-    <a href="https://open.spotify.com/show/drbrunogoulart" target="_blank" class="btn-sp">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      Spotify
-    </a>
-  </div>
-</section>
-
-<!-- LIVRO -->
-<section class="livro">
-  <div class="livro-capa" style="background:#1a0830;min-height:320px;display:flex;align-items:center;justify-content:center;padding:24px">
-    <div style="text-align:center;color:#fff">
-      <p style="font-family:'Playfair Display',serif;font-size:28px;font-weight:900;line-height:1.1;margin-bottom:8px">A Construção<br><em style="color:#C4A8E8">do Nós</em></p>
-      <p style="font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-top:16px">Dr. Bruno Goulart</p>
-    </div>
-  </div>
-  <div>
-    <p class="livro-tag">Livro · Em breve na Amazon</p>
-    <h2>A Construção<br>do <em>Nós</em></h2>
-    <p>O amor além da paixão e da idealização. Um guia para relacionamentos de verdade — escrito por quem esteve no poço da desesperança e foi resgatado com boas referências e boas ideias.</p>
-    <a href="#" class="btn-livro">Em breve — saiba mais</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">Dr. <span>Bruno Goulart</span></div>
-  <p>CRM-SP 192.571 · Psiquiatria e Saúde Mental · Alphaville, SP</p>
+  <p>CRM-SP 192.571 · Psiquiatria e Saúde Mental</p>
   <div class="footer-links">
-    <a href="/desafio">Desafio</a>
+    <a href="/">Site principal</a>
     <a href="https://instagram.com/drbrunogoulart" target="_blank">Instagram</a>
     <a href="https://youtube.com/@drbrunogoulart" target="_blank">YouTube</a>
-    <a href="https://open.spotify.com/show/drbrunogoulart" target="_blank">Spotify</a>
   </div>
 </footer>
 
+<script>
+function toggleFaq(el){const item=el.parentElement;const open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');}
+</script>
 </body>
 </html>
