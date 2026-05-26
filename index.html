@@ -12,6 +12,7 @@
   --bege2:#E8E0D4;
   --roxo:#4B0082;
   --roxo-light:#6B2FA0;
+  --roxo-pale:#C4A8E8;
   --azul:#0047AB;
   --verm:#8B0000;
   --preto:#0A0A0A;
@@ -77,7 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 5%;display:flex
 .metodo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .metodo-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px 28px;transition:all .25s}
 .metodo-card:hover{background:rgba(75,0,130,.12);border-color:rgba(75,0,130,.3);transform:translateY(-4px)}
-.metodo-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:rgba(75,0,130,.3);line-height:1;margin-bottom:20px}
+.metodo-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--roxo-pale);line-height:1;margin-bottom:20px}
 .metodo-card h3{font-size:17px;font-weight:500;color:#fff;margin-bottom:10px}
 .metodo-card p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.7;font-weight:300}
 
@@ -107,7 +108,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 5%;display:flex
 
 /* DESAFIO */
 .desafio{padding:100px 8%;background:linear-gradient(135deg,var(--roxo) 0%,#2A0050 100%);position:relative;overflow:hidden}
-.desafio::before{content:'NÓS';position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:260px;font-weight:900;color:rgba(255,255,255,.04);pointer-events:none;line-height:1}
+.desafio::before{content:''}
 .desafio-inner{max-width:860px;margin:0 auto;text-align:center;position:relative;z-index:2}
 .desafio-tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);font-size:11px;font-weight:500;padding:6px 18px;border-radius:50px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px}
 .desafio h2{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;margin-bottom:20px;line-height:1.1}
@@ -115,8 +116,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 5%;display:flex
 .desafio p{font-size:17px;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto 48px;line-height:1.8;font-weight:300}
 .desafio-preco{margin-bottom:40px}
 .preco-de{font-size:14px;color:rgba(255,255,255,.35);text-decoration:line-through;margin-bottom:4px}
-.preco-val{font-family:'Playfair Display',serif;font-size:72px;font-weight:900;color:#fff;line-height:1}
-.preco-val sup{font-size:28px;vertical-align:top;margin-top:16px;margin-right:4px}
+.preco-val{font-family:'Playfair Display',serif;font-size:260px!important;font-weight:900;color:#fff;line-height:.85;display:flex;align-items:center;justify-content:center;gap:6px}
 .preco-obs{font-size:12px;color:rgba(255,255,255,.35);margin-top:8px;letter-spacing:.08em;text-transform:uppercase}
 .btn-desafio{display:inline-block;background:#fff;color:var(--roxo);padding:18px 48px;border-radius:50px;font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
 .btn-desafio:hover{background:#f0e8ff;transform:translateY(-2px)}
@@ -172,7 +172,7 @@ footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.8}
   .desafio{padding:60px 6%}
   .desafio h2{font-size:clamp(32px,8vw,52px)}
   .desafio p{font-size:15px}
-  .preco-val{font-size:60px}
+  .preco-val{font-size:180px!important}
   .conteudo{padding:60px 6%}
   .conteudo-btns{flex-direction:column;align-items:center}
   .livro{padding:60px 6%;grid-template-columns:1fr}
@@ -315,18 +315,18 @@ footer p{font-size:12px;color:rgba(255,255,255,.25);line-height:1.8}
   </div>
 </section>
 
-<!-- DESAFIO -->
+<!-- SILENCIO -->
 <section class="desafio" id="desafio">
   <div class="desafio-inner">
-    <div class="desafio-tag">Desafio · Programa Digital</div>
-    <h2>Pronto para<br><em>Recomeçar.</em></h2>
-    <p>Para quem terminou, mas ainda não se desligou emocionalmente. 3 aulas diretas para reorganizar o que ficou.</p>
+    <div class="desafio-tag">Dr. Bruno Goulart · Aula Gravada</div>
+    <h2>O Código do<br><em>Silêncio.</em></h2>
+    <p>O que o silêncio masculino realmente comunica — e o que fazer (ou não fazer) enquanto ele dura.</p>
     <div class="desafio-preco">
       <p class="preco-de">De R$ 97,00</p>
-      <p class="preco-val"><sup>R$</sup>27</p>
+      <p class="preco-val"><span style="font-size:28px;color:var(--roxo-pale);font-weight:500;align-self:flex-start;padding-top:20px">R$</span>27</p>
       <p class="preco-obs">Pagamento único · Acesso imediato</p>
     </div>
-    <a href="/desafio" class="btn-desafio">Quero começar agora</a>
+    <a href="/silencio" class="btn-desafio">Quero entender agora</a>
     <div class="garantia">🛡️ Garantia de 7 dias — 100% do dinheiro de volta</div>
   </div>
 </section>
