@@ -22,7 +22,6 @@ img{max-width:100%;display:block}
 .hero-bullet{display:flex;align-items:center;gap:10px;color:#fff;font-size:clamp(13px,1.5vw,16px)}
 .hero-bullet::before{content:'✅';font-size:15px;flex-shrink:0}
 
-/* Antes/Depois no hero */
 .hero-ad{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:680px;width:100%;margin:0 auto}
 .ad-card{position:relative;border-radius:10px;overflow:hidden}
 .ad-card img{width:100%;height:260px;object-fit:cover;object-position:center top;display:block}
@@ -73,30 +72,64 @@ img{max-width:100%;display:block}
 .sobre p{font-size:clamp(13px,1.2vw,15px);color:#333;line-height:1.7;margin-bottom:10px}
 .sobre-crm{font-size:12px;color:#7B1535;font-weight:600;margin-top:8px}
 
-/* ─── O QUE RECEBE ─── */
+/* ─── O QUE RECEBE — HEADER ─── */
 .recebe-header{background:#fff;padding:40px 5% 0;text-align:center}
 .recebe-eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7B1535;margin-bottom:12px}
 .recebe-h2{font-family:'Open Sans',sans-serif;font-size:clamp(20px,3vw,34px);font-weight:700;color:#3D0B18;line-height:1.3}
 .recebe-h2 b{font-weight:800}
 
+/* ─── ENTREGÁVEIS PRINCIPAIS ─── */
+.entregaveis-section{background:#fff;padding:0 5% 0}
+.entregaveis-label{text-align:center;padding:32px 5% 8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#7B1535}
+
 .recebe-row{display:grid;grid-template-columns:1fr 1fr;align-items:center;background:#fff}
 .recebe-row.inv{background:#F1F6FF;direction:rtl}
 .recebe-row.inv > *{direction:ltr}
-.recebe-img{display:flex;align-items:center;justify-content:center;padding:32px;font-size:72px;min-height:200px}
+.recebe-img{display:flex;align-items:center;justify-content:center;padding:32px;min-height:200px}
+.recebe-img img{max-width:260px;width:100%;height:auto;border-radius:8px}
 .recebe-content{padding:32px}
 .recebe-title{font-family:'Poppins',sans-serif;font-size:clamp(17px,2vw,26px);font-weight:700;color:#CDA508;margin-bottom:10px;line-height:1.3}
 .recebe-row.inv .recebe-title{color:#3D0B18}
 .recebe-text{font-size:clamp(13px,1.3vw,17px);color:#505050;line-height:1.75}
 
+/* ─── BADGE ENTREGÁVEL ─── */
+.entregavel-badge{display:inline-block;background:#3D0B18;color:#f5db4e;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:10px}
+
+/* ─── BÔNUS ─── */
+.bonus-divider{background:#fff;padding:40px 5% 8px;text-align:center}
+.bonus-divider-inner{max-width:680px;margin:0 auto;display:flex;align-items:center;gap:16px}
+.bonus-divider-line{flex:1;height:1px;background:#e0e0e0}
+.bonus-divider-text{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#7B1535;padding:8px 24px;border-radius:50px;white-space:nowrap}
+
+/* Bônus rows com fundo levemente diferente */
+.recebe-row.bonus-row{background:#FFF8F0}
+.recebe-row.bonus-row.inv{background:#FFF0F3}
+.recebe-row.bonus-row .recebe-title{color:#7B1535}
+.recebe-row.bonus-row.inv .recebe-title{color:#7B1535}
+.bonus-badge{display:inline-block;background:#f5db4e;color:#3D0B18;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:10px}
+
 /* ─── RECAP ─── */
-.recap{padding:48px 5%;background:#fff}
-.recap-box{max-width:680px;margin:0 auto;background:#F6FAFF;border:1px solid #ccc;border-radius:20px;padding:36px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.recap{padding:56px 5%;background:#F8F8F8}
+.recap-box{max-width:680px;margin:0 auto;background:#fff;border:1px solid #e0e0e0;border-radius:20px;padding:36px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
 .recap-title{font-family:'Poppins',sans-serif;font-size:clamp(20px,2.5vw,32px);font-weight:700;color:#161616;text-align:center;margin-bottom:4px}
 .recap-sub{font-family:'Open Sans',sans-serif;font-size:clamp(13px,1.5vw,20px);font-weight:700;color:#161616;text-align:center;margin-bottom:24px;line-height:1.3}
-.recap-row{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #e0e0e0;margin-bottom:12px;font-family:'Poppins',sans-serif;gap:12px}
-.recap-row:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
-.recap-name{font-size:clamp(12px,1.3vw,16px);font-weight:400;color:#141414;display:flex;align-items:center;gap:8px}
-.recap-price{font-size:clamp(12px,1.3vw,16px);font-weight:700;color:#FF2A2A;text-decoration:line-through;white-space:nowrap}
+
+.recap-row{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid #e0e0e0;margin-bottom:14px;gap:16px}
+.recap-row:last-of-type{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.recap-info{flex:1}
+.recap-name{font-family:'Poppins',sans-serif;font-size:clamp(13px,1.3vw,15px);font-weight:700;color:#141414;margin-bottom:3px}
+.recap-desc{font-family:'Open Sans',sans-serif;font-size:clamp(11px,1.1vw,13px);color:#777;line-height:1.5}
+.recap-badge-bonus{display:inline-block;background:#f5db4e;color:#3D0B18;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:50px;margin-bottom:4px}
+.recap-price{font-size:clamp(13px,1.3vw,15px);font-weight:700;color:#FF2A2A;text-decoration:line-through;white-space:nowrap;font-family:'Poppins',sans-serif;padding-top:2px}
+
+.recap-divider{display:flex;align-items:center;gap:12px;margin:16px 0}
+.recap-divider-line{flex:1;height:1px;background:#e8e8e8}
+.recap-divider-text{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7B1535;white-space:nowrap}
+
+.recap-total{background:linear-gradient(135deg,#3D0B18,#7B1535);border-radius:14px;padding:24px 28px;margin-top:20px;text-align:center}
+.recap-total p{font-family:'Open Sans',sans-serif;font-size:clamp(16px,2vw,22px);font-weight:700;color:#fff}
+.recap-total .riscado{color:#f5db4e;text-decoration:line-through}
+.recap-total .mas{font-size:clamp(14px,1.6vw,18px);font-weight:400;color:rgba(255,255,255,.8);margin-top:8px}
 
 /* ─── PREÇO ─── */
 .preco-section{background:radial-gradient(ellipse at center,#7B1535 0%,#3D0B18 100%);padding:64px 5%;display:flex;justify-content:center}
@@ -159,6 +192,7 @@ footer p{font-size:11px;color:rgba(255,255,255,.3)}
   .escolha-ou{font-size:48px}
   .sobre-foto{min-height:240px}
   footer{flex-direction:column;text-align:center}
+  .recap-item{grid-template-columns:60px 1fr auto;gap:12px;padding:16px}
 }
 </style>
 </head>
@@ -176,7 +210,6 @@ footer p{font-size:11px;color:rgba(255,255,255,.3)}
     <div class="hero-bullet">Não sabe como se posicionar sem afastar ou se perder</div>
     <div class="hero-bullet">Está cansada de repetir o mesmo padrão</div>
   </div>
-  <!-- ANTES / DEPOIS -->
   <div class="hero-ad">
     <div class="ad-card">
       <img src="antes.jpg" alt="Antes do guia">
@@ -197,7 +230,7 @@ footer p{font-size:11px;color:rgba(255,255,255,.3)}
     <div class="forwho-pill">Não entende os sinais do começo de uma relação</div>
     <div class="forwho-pill">Não sabe se posicionar sem afastar ou se perder</div>
     <div class="forwho-pill">Está cansada de repetir o mesmo padrão</div>
-    <div class="forwho-pill">Quer saber se essa relação tem futuro — ou não</div>
+    <div class="forwho-pill">Quer saber se essa relação vai avançar ou não</div>
     <div class="forwho-pill">Manda mensagem no impulso e depois se arrepende</div>
   </div>
   <div class="forwho-destaque">
@@ -255,69 +288,151 @@ footer p{font-size:11px;color:rgba(255,255,255,.3)}
   </div>
 </section>
 
-<!-- ═══ O QUE RECEBE ═══ -->
+<!-- ═══ O QUE RECEBE — HEADER ═══ -->
 <div class="recebe-header">
   <p class="recebe-eyebrow">O que você vai receber</p>
-  <h2 class="recebe-h2">Para seguir os 3 passos, <b>veja tudo que está no guia:</b></h2>
+  <h2 class="recebe-h2">Veja tudo o que está incluído <b>no Guia:</b></h2>
 </div>
 
+<!-- ─── LABEL: ENTREGÁVEIS ─── -->
+<div class="entregaveis-label">📦 O que você recebe no Guia</div>
+
+<!-- ENTREGÁVEL 1 -->
 <div class="recebe-row">
-  <div class="recebe-img">🎬</div>
+  <div class="recebe-img"><img src="tablet-aula.png" alt="Aula Gravada — O Guia da Mulher que Entende o Silêncio"></div>
   <div class="recebe-content">
+    <span class="entregavel-badge">Entregável 1 de 3</span>
     <h3 class="recebe-title">Aula Gravada — 35 minutos</h3>
-    <p class="recebe-text">Uma aula completa com o Dr. Bruno Goulart explicando os 3 tipos de silêncio masculino, o que acontece dentro de você quando ele some, e o protocolo prático para agir diferente.</p>
+    <p class="recebe-text">Uma aula completa com o Dr. Bruno Goulart explicando os 3 tipos de silêncio masculino, o que acontece dentro de você quando ele some, e o protocolo prático para agir diferente — sem ansiedade e sem se perder.</p>
   </div>
 </div>
+
+<!-- ENTREGÁVEL 2 -->
 <div class="recebe-row inv">
-  <div class="recebe-img">📖</div>
+  <div class="recebe-img"><img src="celular-ebook.png" alt="Ebook — O Guia da Mulher que Entende o Silêncio"></div>
   <div class="recebe-content">
+    <span class="entregavel-badge">Entregável 2 de 3</span>
     <h3 class="recebe-title">Ebook — O Guia da Mulher que Entende o Silêncio</h3>
-    <p class="recebe-text">O conteúdo da aula em formato de leitura para você consultar sempre que precisar — com os 3 tipos de silêncio, o que acontece dentro de você e os 3 passos para agir com maturidade.</p>
+    <p class="recebe-text">O conteúdo da aula em formato de leitura para você consultar sempre que precisar — com os 3 tipos de silêncio, o que acontece dentro de você e os 3 passos para agir com maturidade emocional.</p>
   </div>
 </div>
+
+<!-- ENTREGÁVEL 3 -->
 <div class="recebe-row">
-  <div class="recebe-img">✅</div>
+  <div class="recebe-img"><img src="celular-checklist.png" alt="Checklist — Você precisa desse guia?"></div>
   <div class="recebe-content">
+    <span class="entregavel-badge">Entregável 3 de 3</span>
     <h3 class="recebe-title">Checklist — Você precisa desse guia?</h3>
-    <p class="recebe-text">10 perguntas diretas para você identificar se está vivendo uma situação que precisa de atenção — e reconhecer padrões que talvez você ainda não tenha percebido.</p>
+    <p class="recebe-text">10 perguntas diretas para você identificar se está vivendo uma situação que precisa de atenção — e reconhecer padrões que talvez você ainda não tenha percebido em você mesma.</p>
   </div>
 </div>
-<div class="recebe-row inv">
-  <div class="recebe-img">⏱️</div>
+
+<!-- ─── DIVISOR BÔNUS ─── -->
+<div class="bonus-divider">
+  <div class="bonus-divider-inner">
+    <div class="bonus-divider-line"></div>
+    <div class="bonus-divider-text">🎁 + BÔNUS EXCLUSIVOS</div>
+    <div class="bonus-divider-line"></div>
+  </div>
+</div>
+
+<!-- BÔNUS 1 -->
+<div class="recebe-row bonus-row inv">
+  <div class="recebe-img"><img src="celular-protocolo24h.png" alt="Protocolo das 24 Horas"></div>
   <div class="recebe-content">
+    <span class="bonus-badge">🎁 Bônus 1</span>
     <h3 class="recebe-title">Protocolo das 24 Horas</h3>
-    <p class="recebe-text">O que fazer nas primeiras 24 horas quando ele some. Um guia passo a passo para você atravessar o momento mais difícil sem se destruir emocionalmente.</p>
+    <p class="recebe-text">O que fazer nas primeiras 24 horas quando ele some. Um guia passo a passo para você atravessar o momento mais difícil — sem se destruir emocionalmente e sem tomar decisões das quais vai se arrepender.</p>
   </div>
 </div>
-<div class="recebe-row">
-  <div class="recebe-img">🚩</div>
+
+<!-- BÔNUS 2 -->
+<div class="recebe-row bonus-row">
+  <div class="recebe-img"><img src="celular-sinaisvermelhos.png" alt="Lista de Sinais Vermelhos"></div>
   <div class="recebe-content">
+    <span class="bonus-badge">🎁 Bônus 2</span>
     <h3 class="recebe-title">Lista de Sinais Vermelhos</h3>
-    <p class="recebe-text">20 sinais que aparecem no começo de uma relação e que a maioria das mulheres ignora. Para você identificar cedo o que está acontecendo de verdade.</p>
+    <p class="recebe-text">20 sinais que aparecem no começo de uma relação e que a maioria das mulheres ignora por estar apaixonada ou esperançosa. Para você identificar cedo o que está acontecendo de verdade — e parar de se enganar.</p>
   </div>
 </div>
-<div class="recebe-row inv">
-  <div class="recebe-img">🎧</div>
+
+<!-- BÔNUS 3 -->
+<div class="recebe-row bonus-row inv">
+  <div class="recebe-img"><img src="celular-audio.png" alt="Áudio — Exercício de Respiração Guiada"></div>
   <div class="recebe-content">
-    <h3 class="recebe-title">Áudio — Exercício de Respiração</h3>
-    <p class="recebe-text">Um áudio guiado pelo Dr. Bruno Goulart para você usar nos momentos de maior ansiedade. Quando a cabeça acelera, esse exercício te devolve ao seu eixo em minutos.</p>
+    <span class="bonus-badge">🎁 Bônus 3</span>
+    <h3 class="recebe-title">Áudio — Exercício de Respiração Guiada</h3>
+    <p class="recebe-text">Um áudio guiado pelo Dr. Bruno Goulart para você usar nos momentos de maior ansiedade. Quando a cabeça acelera e o coração aperta, esse exercício te devolve ao seu eixo em minutos.</p>
   </div>
 </div>
 
 <!-- ═══ RECAP ═══ -->
 <section class="recap">
+  <p class="recap-title">RECAPITULANDO...</p>
+  <p class="recap-sub">VEJA TUDO O QUE VOCÊ VAI RECEBER<br>NO GUIA DA MULHER QUE ENTENDE O SILÊNCIO</p>
+
   <div class="recap-box">
-    <p class="recap-title">RECAPITULANDO...</p>
-    <p class="recap-sub">VEJA TUDO O QUE VOCÊ VAI RECEBER<br>NO GUIA DA MULHER QUE ENTENDE O SILÊNCIO</p>
-    <div class="recap-row"><span class="recap-name">🎬 Aula Gravada — 35 minutos</span><span class="recap-price">R$97,00</span></div>
-    <div class="recap-row"><span class="recap-name">📖 Ebook</span><span class="recap-price">R$47,00</span></div>
-    <div class="recap-row"><span class="recap-name">✅ Checklist</span><span class="recap-price">R$27,00</span></div>
-    <div class="recap-row"><span class="recap-name">⏱️ Protocolo das 24 Horas</span><span class="recap-price">R$47,00</span></div>
-    <div class="recap-row"><span class="recap-name">🚩 Lista de Sinais Vermelhos</span><span class="recap-price">R$37,00</span></div>
-    <div class="recap-row"><span class="recap-name">🎧 Áudio — Exercício de Respiração</span><span class="recap-price">R$27,00</span></div>
-    <div style="text-align:center;margin-top:20px;padding-top:16px;border-top:2px solid #e0e0e0">
-      <p style="font-family:'Open Sans',sans-serif;font-size:clamp(16px,2vw,22px);font-weight:700;color:#333">Tudo isso deveria custar: <span style="color:#FF2A2A;text-decoration:line-through"><strong>R$282,00</strong></span></p>
-      <p style="font-family:'Open Sans',sans-serif;font-size:clamp(14px,1.6vw,18px);font-weight:400;color:#555;margin-top:8px">Mas agora você pode ter acesso ao <strong>Guia da Mulher que Entende o Silêncio</strong> por</p>
+
+    <div class="recap-row">
+      <div class="recap-info">
+        <div class="recap-name">🎬 Aula Gravada — 35 minutos</div>
+        <div class="recap-desc">Os 3 tipos de silêncio masculino, o que acontece dentro de você e o protocolo para agir com clareza e maturidade emocional.</div>
+      </div>
+      <span class="recap-price">R$97,00</span>
+    </div>
+
+    <div class="recap-row">
+      <div class="recap-info">
+        <div class="recap-name">📖 Ebook — O Guia Completo</div>
+        <div class="recap-desc">Todo o conteúdo da aula em formato de leitura — para consultar sempre que precisar, onde e quando quiser.</div>
+      </div>
+      <span class="recap-price">R$47,00</span>
+    </div>
+
+    <div class="recap-row">
+      <div class="recap-info">
+        <div class="recap-name">✅ Checklist — Você precisa desse guia?</div>
+        <div class="recap-desc">10 perguntas diretas para reconhecer padrões e identificar se a sua situação atual precisa de atenção.</div>
+      </div>
+      <span class="recap-price">R$27,00</span>
+    </div>
+
+    <div class="recap-divider">
+      <div class="recap-divider-line"></div>
+      <div class="recap-divider-text">🎁 Bônus Exclusivos</div>
+      <div class="recap-divider-line"></div>
+    </div>
+
+    <div class="recap-row">
+      <div class="recap-info">
+        <div class="recap-badge-bonus">🎁 Bônus 1</div>
+        <div class="recap-name">Protocolo das 24 Horas</div>
+        <div class="recap-desc">O que fazer quando ele some — um passo a passo para atravessar as primeiras 24 horas sem se destruir emocionalmente.</div>
+      </div>
+      <span class="recap-price">R$47,00</span>
+    </div>
+
+    <div class="recap-row">
+      <div class="recap-info">
+        <div class="recap-badge-bonus">🎁 Bônus 2</div>
+        <div class="recap-name">Lista de Sinais Vermelhos</div>
+        <div class="recap-desc">20 sinais que aparecem no começo de uma relação e que a maioria ignora — para você identificar cedo o que está acontecendo de verdade.</div>
+      </div>
+      <span class="recap-price">R$37,00</span>
+    </div>
+
+    <div class="recap-row">
+      <div class="recap-info">
+        <div class="recap-badge-bonus">🎁 Bônus 3</div>
+        <div class="recap-name">Áudio — Exercício de Respiração Guiada</div>
+        <div class="recap-desc">Áudio guiado pelo Dr. Bruno para usar nos momentos de maior ansiedade e voltar ao seu eixo em minutos.</div>
+      </div>
+      <span class="recap-price">R$27,00</span>
+    </div>
+
+    <div class="recap-total">
+      <p>Tudo isso deveria custar: <span class="riscado"><strong>R$282,00</strong></span></p>
+      <p class="mas">Mas agora você pode ter acesso ao <strong>Guia da Mulher que Entende o Silêncio</strong> por</p>
     </div>
   </div>
 </section>
